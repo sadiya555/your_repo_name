@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SADIYA TECH - APIs Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
+
+body {
+    background-color: #0f172a;
+    font-family: 'Space Grotesk', sans-serif;
+    min-height: 100vh;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 1.5s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.8; }
+}
+
+.endpoint-card, .stats-card {
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.endpoint-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-color: rgba(147, 197, 253, 0.5);
+}
+
+.stats-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(147, 197, 253, 0.3);
+}
+
+.Btn {
+    width: 180px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #77530a, #ffd277, #77530a, #77530a, #ffd277, #77530a);
+    background-size: 250%;
+    background-position: left;
+    color: #ffd277;
+    font-size: 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 1s;
+    overflow: hidden;
+}
+
+.Btn::before {
+    position: absolute;
+    content: "WHATSAPP CHANNEL";
+    color: #ffd277;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 97%;
+    height: 90%;
+    border-radius: 8px;
+    transition-duration: 1s;
+    background-color: rgba(0, 0, 0, 0.842);
+    background-size: 200%;
+}
+
+.Btn:hover {
+    background-position: right;
+    transition-duration: 1s;
+}
+
+.Btn:hover::before {
+    background-position: right;
+    transition-duration: 1s;
+}
+
+.Btn:active {
+    transform: scale(0.95);
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 1.5rem 6%;
+    background-color: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo-container {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.blinking-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #2ca58d; /* Green color */
+    border-radius: 50%;
+    animation: blink 1s infinite;
+}
+
+/* Blinking animation */
+@keyframes blink {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0.3;
+    }
+}
+</style>
+</head>
+<nav class="navbar fixed top-0 left-0 right-0 z-50 px-6 py-4">
+        <h3 class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            SADIYA TECH - APIs
+        </h3 >
+</nav>
+
+<body class="text-gray-200">
+    <!-- Header with Logo -->
+    <header class="py-24 px-6 text-center animate__animated animate__fadeIn">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
+            <!-- Logo/Image Container -->
+            <div class="logo-container w-32 h-32 md:w-48 md:h-48 relative">
+             <img src="https://i.ibb.co/NnZpBWmm/sadiya.jpg" alt="SADIYA TECH - APIs Logo" class="w-full h-full object-contain relative z-10"/>
+            </div>
+
+            <!-- Title and Description -->
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-400 to-green-500 bg-clip-text text-transparent">
+                    Welcome to SADIYA TECH - APIs
+                </h1>
+                <p class="mt-4 text-gray-400">Enjoy Free Api Endpoints.</p>
+            </div>
+        </div>
+    </header>
+
+ <!-- Main Content -->
+ <main class="container mx-auto px-4 md:px-6 py-8">
+    <!-- Endpoints Section -->
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate__animated animate__fadeInUp">
+        <!-- Endpoint ai -->
+        <div class="endpoint-card rounded-xl p-6">
+          <div class="flex justify-between items-start mb-4">
+           <span class="method-badge method-get"></span>
+           <span class="blinking-dot"></span>
+          </div>
+            <h3 class="text-xl font-semibold mb-2">AI</h3>
+            <p class="text-gray-400 text-sm mb-4">Artificial Intelligence Endpoints</p>
+            <a href="/ai" class="text-blue-400 hover:text-blue-300 text-sm flex items-center">
+              GET <i class="fas fa-arrow-right ml-2"></i></a>
+        </div>
+        <!-- Endpoint downlord -->
+        <div class="endpoint-card rounded-xl p-6">
+          <div class="flex justify-between items-start mb-4">
+           <span class="method-badge method-get"></span>
+           <span class="blinking-dot"></span>
+          </div>
+            <h3 class="text-xl font-semibold mb-2">DOWNLOAD</h3>
+            <p class="text-gray-400 text-sm mb-4">Media downloader Endpoints</p>
+            <a href="/download" class="text-blue-400 hover:text-blue-300 text-sm flex items-center">
+              GET <i class="fas fa-arrow-right ml-2"></i></a>
+        </div>
+        <!-- Endpoint tools -->
+        <div class="endpoint-card rounded-xl p-6">
+          <div class="flex justify-between items-start mb-4">
+           <span class="method-badge method-get"></span>
+           <span class="blinking-dot"></span>
+          </div>
+            <h3 class="text-xl font-semibold mb-2">TOOLS</h3>
+            <p class="text-gray-400 text-sm mb-4">Tools Endpoints</p>
+            <a href="/tools" class="text-blue-400 hover:text-blue-300 text-sm flex items-center">
+              GET <i class="fas fa-arrow-right ml-2"></i></a>
+        </div>
+        <!-- Endpoint tools -->
+        <div class="endpoint-card rounded-xl p-6">
+          <div class="flex justify-between items-start mb-4">
+           <span class="method-badge method-get"></span>
+           <span class="blinking-dot"></span>
+          </div>
+            <h3 class="text-xl font-semibold mb-2">MOVIE</h3>
+            <p class="text-gray-400 text-sm mb-4">Movie Endpoints</p>
+            <a href="/movie" class="text-blue-400 hover:text-blue-300 text-sm flex items-center">
+              GET <i class="fas fa-arrow-right ml-2"></i></a>
+        </div>
+        
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="mt-16 py-8 px-6 text-center border-t border-gray-800">
+    <p class="text-gray-400 text-sm">
+        © 2024 - 9999 Sadiya Tech. All rights reserved.
+    </p>
+</footer>
