@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SADIYA TECH - APIs Ai Endpoints</title>
+    <link href="img/sadiya.jpg" rel="icon">
+    <link href="img/sadiya.jpg" rel="apple-touch-icon">
+    
+  <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
+    color: #fff;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px 0;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+header h1 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: slideIn 1s ease-in-out;
+}
+
+.api-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.api-card {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: scaleIn 1s ease-in-out;
+}
+
+.api-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+}
+
+.api-card h2 {
+    font-size: 1.5rem;
+    color: #ffaf7b;
+    margin-bottom: 10px;
+}
+
+.api-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.api-btn {
+    display: inline-block;
+    background: #ffaf7b;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.api-btn:hover {
+    background: #d76d77;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+      
+@keyframes slideIn {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Footer glowing effect */
+@keyframes footerGlow {
+    0% {
+        background-color: #333;
+    }
+    50% {
+        background-color: #555;
+    }
+    100% {
+        background-color: #333;
+    }
+}
+      
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+        }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h2>SADIYA TECH - APIs</h2>
+            <h3>AI ENDPOINTS</h3>
+        </div>
+ 
+    </header>
+
+    <main>
+        <div class="api-container">
+            <!-- blackbox -->
+            <section class="api-card">
+                <h2>Blackbox</h2>
+                <p>Fetches responses from Blackbox ai.</p>
+                <a href="/ai/blackbox?q=hi" target="_blank" class="api-btn">Try it</a>
+            </section>
+            <!-- blackbox v4 -->
+            <section class="api-card">
+                <h2>Blackbox V4</h2>
+                <p>Fetches responses from Blackbox ai v4.</p>
+                <a href="/ai/blackboxv4?q=hi" target="_blank" class="api-btn">Try it</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>© <span id="currentYear"></span> | ᴅ.ᴄ.ᴍᵀᴹ | ꜱᴀᴅɪʏᴀ ᴛᴇᴄʜ ᴄᴏ-ʟᴇᴀᴅᴇʀ 4 <╳> 🇱🇰</p>
+    </footer>
+  <script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  </script>
+</body>
+  </html>
